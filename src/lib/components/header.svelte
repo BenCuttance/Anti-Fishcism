@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import '../global.css';
 	import CartIcon from '$lib/heroIcons/cartIcon.svelte';
 	import MagnifyingGlassIcon from '$lib/heroIcons/magnifyingGlassIcon.svelte';
@@ -40,17 +40,18 @@
 
 	#nav-links {
 		display: flex;
-		gap: 2.5%;
-		width: 5%;
 	}
 
-	a {
-		width: 50%;
-		display: block;
+	#nav-links a {
+		width: 2.5rem;
+		height: 2.5rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 
 	#hamburger-container a {
-		width: 3.5rem;
+		width: 2.5rem;
 		height: 2.5rem;
 		display: flex;
 		align-items: center;
