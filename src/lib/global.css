@@ -1,0 +1,9 @@
+
+:root {
+  --font-main: "Funnel Sans", sans-serif;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
