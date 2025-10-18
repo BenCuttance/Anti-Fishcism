@@ -31,7 +31,7 @@
 		{#each slideShowImages as slide, i}
 			<div class="mySlides fade" style="display: {i === slideIndex ? 'block' : 'none'}">
 				<img src={slide.design} alt={`display ${slide.caption}`} />
-				<a  href={slide.link} class="text">{slide.caption}</a>
+				<a href={slide.link} class="text">{slide.caption}</a>
 			</div>
 		{/each}
 
@@ -48,30 +48,35 @@
 
 	.text {
 		position: absolute;
-        
-		bottom: 10%; 
-		left: 50%; 
+
+		bottom: 10%;
+		left: 50%;
 		transform: translateX(-50%);
-		color: white; 
+		color: white;
 		font-size: 1.5rem;
 		font-weight: bold;
-        background-color: black;
-        text-decoration: none;
-        padding: 0.5%;
-        border-radius: 15px;
+		background-color: black;
+		text-decoration: none;
+		padding: 0.5%;
+		border-radius: 15px;
 	}
 
-    .text:hover{
-        color: black;
-        background-color: white;
-    }
+	.text:hover {
+		color: black;
+		background-color: white;
+	}
 
 	section {
-		height: 400px;
-		background-color: rgba(0, 0, 0, 0.87);
+		height: 500px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
+
+        background-color: rgba(0, 0, 0, 0.87);
+		background-image: url('../images/fishBanner.png');
+		background-repeat: repeat-x;
+		background-size: 800px auto;
+
 	}
 
 	.slideshow-container {
@@ -90,8 +95,8 @@
 	.mySlides img {
 		min-width: 1000px;
 		max-width: 1000px;
-		min-height: 400px;
-		max-height: 400px;
+		min-height: 500px;
+		max-height: 500px;
 	}
 
 	.mySlides.fade {
