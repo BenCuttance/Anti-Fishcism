@@ -97,6 +97,7 @@
 		max-width: 1000px;
 		min-height: 500px;
 		max-height: 500px;
+		border-radius: 15px;
 	}
 
 	.mySlides.fade {

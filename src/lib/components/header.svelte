@@ -29,7 +29,7 @@
 		flex-direction: row;
 		justify-content: space-between;
 		align-items: center;
-		background-color: black;
+		background-color: var(--main-light-black);
 		color: white;
 		font-family: var(--font-main);
 	}
