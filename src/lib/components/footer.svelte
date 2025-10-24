@@ -3,15 +3,23 @@
 	import { Instagram } from '@lucide/svelte';
 	import { Twitter } from '@lucide/svelte';
 
+
 	let facebookHovered = false;
 	let instagramHovered = false;
-    let twitterHovered = false;
+	let twitterHovered = false;
 
 	let links = {
-		home: '/',
-		catalog: '/',
-		about: '/',
-		contactUs: '/'
+		pageLinks: {
+			home: '/',
+			catalog: '/',
+			about: '/',
+			contactUs: '/'
+		},
+		socialMediaLinks: {
+			instagram: 'https://www.instagram.com/anti_fishcism/',
+			facebook: '/',
+			twitter: '/'
+		}
 	};
 </script>
 
@@ -20,14 +28,15 @@
 		<h2>Quick Links</h2>
 
 		<div id="links">
-			<a href={links.home}>Home</a>
-			<a href={links.catalog}>Catalog</a>
-			<a href={links.about}>About</a>
-			<a href={links.contactUs}>Contact Us</a>
+			<a href={links.pageLinks.home}>Home</a>
+			<a href={links.pageLinks.catalog}>Catalog</a>
+			<a href={links.pageLinks.about}>About</a>
+			<a href={links.pageLinks.contactUs}>Contact Us</a>
 		</div>
 	</div>
-	<div>
-		<button
+	<div id="social-media-icons">
+		<a
+			href={links.socialMediaLinks.facebook}
 			onmouseenter={() => (facebookHovered = true)}
 			onmouseleave={() => (facebookHovered = false)}
 			onfocus={() => (facebookHovered = true)}
@@ -35,10 +44,10 @@
 			aria-label="Facebook link"
 		>
 			<Facebook color={facebookHovered ? 'red' : 'white'} size={50} />
-		</button>
+		</a>
 
-         <!-- TODO:   -->
-		<button
+		<a
+			href={links.socialMediaLinks.instagram}
 			onmouseenter={() => (instagramHovered = true)}
 			onmouseleave={() => (instagramHovered = false)}
 			onfocus={() => (instagramHovered = true)}
@@ -46,9 +55,10 @@
 			aria-label="Instagram link"
 		>
 			<Instagram color={instagramHovered ? 'red' : 'white'} size={50} />
-		</button>
+		</a>
 
-		<button
+		<a
+			href={links.socialMediaLinks.twitter}
 			onmouseenter={() => (twitterHovered = true)}
 			onmouseleave={() => (twitterHovered = false)}
 			onfocus={() => (twitterHovered = true)}
@@ -56,7 +66,7 @@
 			aria-label="Twitter link"
 		>
 			<Twitter color={twitterHovered ? 'red' : 'white'} size={50} />
-		</button>
+		</a>
 	</div>
 	<div>Brand Logo?</div>
 </section>
@@ -80,9 +90,10 @@
 		font-family: var(--font-main);
 	}
 
-	#facebook-icon {
-		width: 100px;
-		height: 100px;
+	#social-media-icons {
+		display: flex;
+		flex-direction: row;
+		gap: 30px;
 	}
 
 	#link-container {
@@ -100,17 +111,16 @@
 
 	a {
 		text-decoration: none;
-		transition: 0.2s;
+		transition: 0.3s;
 		font-size: 20px;
 	}
 
-	a:hover {
-		color: red;
-		transform: translateX(5px);
+	#social-media-icons a:hover {
+		transform: translateY(-5px);
 	}
 
-	button {
-		background-color: transparent;
-		border: none;
+	#links a:hover {
+		color: red;
+		transform: translateX(5px);
 	}
 </style>
