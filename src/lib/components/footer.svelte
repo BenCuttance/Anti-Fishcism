@@ -3,7 +3,6 @@
 	import { Instagram } from '@lucide/svelte';
 	import { Twitter } from '@lucide/svelte';
 
-
 	let facebookHovered = false;
 	let instagramHovered = false;
 	let twitterHovered = false;
@@ -35,37 +34,16 @@
 		</div>
 	</div>
 	<div id="social-media-icons">
-		<a
-			href={links.socialMediaLinks.facebook}
-			onmouseenter={() => (facebookHovered = true)}
-			onmouseleave={() => (facebookHovered = false)}
-			onfocus={() => (facebookHovered = true)}
-			onblur={() => (facebookHovered = false)}
-			aria-label="Facebook link"
-		>
-			<Facebook color={facebookHovered ? 'red' : 'white'} size={50} />
+		<a href={links.socialMediaLinks.facebook}>
+			<Facebook size={50} />
 		</a>
 
-		<a
-			href={links.socialMediaLinks.instagram}
-			onmouseenter={() => (instagramHovered = true)}
-			onmouseleave={() => (instagramHovered = false)}
-			onfocus={() => (instagramHovered = true)}
-			onblur={() => (instagramHovered = false)}
-			aria-label="Instagram link"
-		>
-			<Instagram color={instagramHovered ? 'red' : 'white'} size={50} />
+		<a href={links.socialMediaLinks.instagram} aria-label="Instagram link">
+			<Instagram size={50} />
 		</a>
 
-		<a
-			href={links.socialMediaLinks.twitter}
-			onmouseenter={() => (twitterHovered = true)}
-			onmouseleave={() => (twitterHovered = false)}
-			onfocus={() => (twitterHovered = true)}
-			onblur={() => (twitterHovered = false)}
-			aria-label="Twitter link"
-		>
-			<Twitter color={twitterHovered ? 'red' : 'white'} size={50} />
+		<a href={links.socialMediaLinks.twitter} aria-label="Twitter link">
+			<Twitter size={50} />
 		</a>
 	</div>
 	<div>Brand Logo?</div>
@@ -119,7 +97,7 @@
 		transform: translateY(-5px);
 	}
 
-	#links a:hover {
+	a:hover {
 		color: red;
 		transform: translateX(5px);
 	}
