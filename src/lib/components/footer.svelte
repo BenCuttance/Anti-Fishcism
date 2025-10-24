@@ -1,11 +1,26 @@
 <script lang="ts">
+	import { Facebook } from '@lucide/svelte';
+	import { Instagram } from '@lucide/svelte';
+	import { Twitter } from '@lucide/svelte';
 
-let links= {
-    home: "/",
-    catalog: "/",
-    about: "/",
-    contactUs: "/",
-}
+
+	let facebookHovered = false;
+	let instagramHovered = false;
+	let twitterHovered = false;
+
+	let links = {
+		pageLinks: {
+			home: '/',
+			catalog: '/',
+			about: '/',
+			contactUs: '/'
+		},
+		socialMediaLinks: {
+			instagram: 'https://www.instagram.com/anti_fishcism/',
+			facebook: '/',
+			twitter: '/'
+		}
+	};
 </script>
 
 <section>
@@ -13,13 +28,46 @@ let links= {
 		<h2>Quick Links</h2>
 
 		<div id="links">
-			<a href={links.home}>Home</a>
-			<a href={links.catalog}>Catalog</a>
-			<a href={links.about}>About</a>
-			<a href={links.contactUs}>Contact Us</a>
+			<a href={links.pageLinks.home}>Home</a>
+			<a href={links.pageLinks.catalog}>Catalog</a>
+			<a href={links.pageLinks.about}>About</a>
+			<a href={links.pageLinks.contactUs}>Contact Us</a>
 		</div>
 	</div>
-	<div>Follow us here</div>
+	<div id="social-media-icons">
+		<a
+			href={links.socialMediaLinks.facebook}
+			onmouseenter={() => (facebookHovered = true)}
+			onmouseleave={() => (facebookHovered = false)}
+			onfocus={() => (facebookHovered = true)}
+			onblur={() => (facebookHovered = false)}
+			aria-label="Facebook link"
+		>
+			<Facebook color={facebookHovered ? 'red' : 'white'} size={50} />
+		</a>
+
+		<a
+			href={links.socialMediaLinks.instagram}
+			onmouseenter={() => (instagramHovered = true)}
+			onmouseleave={() => (instagramHovered = false)}
+			onfocus={() => (instagramHovered = true)}
+			onblur={() => (instagramHovered = false)}
+			aria-label="Instagram link"
+		>
+			<Instagram color={instagramHovered ? 'red' : 'white'} size={50} />
+		</a>
+
+		<a
+			href={links.socialMediaLinks.twitter}
+			onmouseenter={() => (twitterHovered = true)}
+			onmouseleave={() => (twitterHovered = false)}
+			onfocus={() => (twitterHovered = true)}
+			onblur={() => (twitterHovered = false)}
+			aria-label="Twitter link"
+		>
+			<Twitter color={twitterHovered ? 'red' : 'white'} size={50} />
+		</a>
+	</div>
 	<div>Brand Logo?</div>
 </section>
 
@@ -29,41 +77,50 @@ let links= {
 		font-family: var(--font-main);
 	}
 
-section {
-  height: 300px;
-  background-color: var(--main-light-black);
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  text-align: center; 
-  padding: 1rem;
-  align-items: center; 
-  justify-items: center; 
-  color: white;
-  font-family: var(--font-main);
-}
+	section {
+		height: 300px;
+		background-color: var(--main-light-black);
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		text-align: center;
+		padding: 1rem;
+		align-items: center;
+		justify-items: center;
+		color: white;
+		font-family: var(--font-main);
+	}
 
-#link-container {
-  display: flex;
-  flex-direction: column;
-  text-align: left; 
-  align-items: flex-start; 
-}
+	#social-media-icons {
+		display: flex;
+		flex-direction: row;
+		gap: 30px;
+	}
 
-#links {
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-}
+	#link-container {
+		display: flex;
+		flex-direction: column;
+		text-align: left;
+		align-items: flex-start;
+	}
 
-a {
-  text-decoration: none;
-  transition: 0.2s;
-  font-size: 20px;
-}
+	#links {
+		display: flex;
+		flex-direction: column;
+		gap: 0.3rem;
+	}
 
-a:hover {
-  color: red;
-  transform: translateX(5px);
-}
+	a {
+		text-decoration: none;
+		transition: 0.3s;
+		font-size: 20px;
+	}
 
+	#social-media-icons a:hover {
+		transform: translateY(-5px);
+	}
+
+	#links a:hover {
+		color: red;
+		transform: translateX(5px);
+	}
 </style>
