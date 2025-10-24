@@ -1,15 +1,22 @@
 <script lang="ts">
 	import '../global.css';
-	import CartIcon from '$lib/heroIcons/cartIcon.svelte';
-	import MagnifyingGlassIcon from '$lib/heroIcons/magnifyingGlassIcon.svelte';
-	import HamburgerMenu from '../heroIcons/hamburgerMenu.svelte';
+	import { Menu } from '@lucide/svelte';
+	import { Search } from '@lucide/svelte';
+	import { ShoppingCart } from '@lucide/svelte';
+
+	let hamburgerMenuOpen = false
 </script>
 
 <section>
 	<div id="hamburger-container">
-		<a href="/">
-			<HamburgerMenu />
-		</a>
+		<button id="hamburger-menu"
+		onclick={() => {hamburgerMenuOpen = hamburgerMenuOpen ? false : true
+			 console.log(hamburgerMenuOpen)}}>
+			<Menu size={50} />
+		</button>
+		<div style="display: {hamburgerMenuOpen ? "none" : "block"};">
+			menu here
+		</div>
 	</div>
 
 	<div id="logo-title">
@@ -17,8 +24,8 @@
 	</div>
 
 	<div id="nav-links">
-		<a href="/"><MagnifyingGlassIcon /></a>
-		<a href="/"><CartIcon /></a>
+		<a href="/"><Search size={50} /></a>
+		<a href="/"><ShoppingCart size={50} /></a>
 	</div>
 </section>
 
@@ -40,21 +47,31 @@
 
 	#nav-links {
 		display: flex;
+		gap: 20px;
 	}
 
-	#nav-links a {
-		width: 2.5rem;
-		height: 2.5rem;
-		display: flex;
-		align-items: center;
-		justify-content: center;
+
+	a {
+		color: white;
+		transition: 0.3s;
 	}
 
-	#hamburger-container a {
-		width: 2.5rem;
-		height: 2.5rem;
-		display: flex;
-		align-items: center;
-		justify-content: center;
+	a:hover {
+		color: red;
+		transform: translateY(-5px);
 	}
+
+	#hamburger-menu{
+		background-color: transparent;
+		color: white;
+		border: none;	
+		transition: 0.3s;
+	}
+
+	#hamburger-menu:hover{
+		color: red;
+		cursor: pointer;
+		transform: translateY(-5px);
+	}
+
 </style>
