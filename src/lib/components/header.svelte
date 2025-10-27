@@ -1,15 +1,34 @@
 <script lang="ts">
 	import '../global.css';
-	import CartIcon from '$lib/heroIcons/cartIcon.svelte';
-	import MagnifyingGlassIcon from '$lib/heroIcons/magnifyingGlassIcon.svelte';
-	import HamburgerMenu from '../heroIcons/hamburgerMenu.svelte';
+	import { ShoppingCart, Menu, Search } from '@lucide/svelte';
+
+	let hamburgerMenuOpen = false;
 </script>
 
 <section>
 	<div id="hamburger-container">
-		<a href="/">
-			<HamburgerMenu />
-		</a>
+		<button
+			id="hamburger-button"
+			onclick={() => {
+				hamburgerMenuOpen = !hamburgerMenuOpen;
+				console.log(hamburgerMenuOpen);
+			}}
+		>
+			<Menu size={50} />
+		</button>
+		<div id="hamburger-menu" class:hamburger-open={hamburgerMenuOpen}>
+			<div id="inner-hamburger-button-container">
+				<button
+					id="hamburger-button-black"
+					onclick={() => {
+						hamburgerMenuOpen = !hamburgerMenuOpen;
+						console.log(hamburgerMenuOpen);
+					}}
+				>
+					<Menu size={50} />
+				</button>
+			</div>
+		</div>
 	</div>
 
 	<div id="logo-title">
@@ -17,8 +36,8 @@
 	</div>
 
 	<div id="nav-links">
-		<a href="/"><MagnifyingGlassIcon /></a>
-		<a href="/"><CartIcon /></a>
+		<a href="/"><Search size={50} /></a>
+		<a href="/"><ShoppingCart size={50} /></a>
 	</div>
 </section>
 
@@ -34,27 +53,76 @@
 		font-family: var(--font-main);
 	}
 
-	div {
+	#nav-links {
+		display: flex;
+		gap: 20px;
 		margin: 1.5%;
 	}
 
-	#nav-links {
-		display: flex;
+	a {
+		color: white;
+		transition: 0.3s;
 	}
 
-	#nav-links a {
-		width: 2.5rem;
-		height: 2.5rem;
-		display: flex;
-		align-items: center;
-		justify-content: center;
+	a:hover {
+		color: red;
+		transform: translateY(-5px);
 	}
 
-	#hamburger-container a {
-		width: 2.5rem;
-		height: 2.5rem;
+	#hamburger-container {
+		position: relative;
+	}
+
+	#hamburger-menu {
+		position: fixed;
+		top: 0;
+		left: 0;
+		height: 100vh;
+		width: 300px;
+		background-color: white;
+		transition:
+			transform 0.5s ease,
+			opacity 0.5s ease;
+		z-index: 999;
+		box-shadow: -5px 0 15px rgba(0, 0, 0, 1.6);
+	}
+
+	.hamburger-open {
+		transform: translateX(0);
+		opacity: 1;
+		transform: translateX(-100%);
+		opacity: 0;
+	}
+
+	#hamburger-button {
+		background-color: transparent;
+		color: white;
+		border: none;
+		transition: 0.3s;
+	}
+
+	#hamburger-button-black {
+		background-color: transparent;
+		color: black;
+		border: none;
+		transition: 0.3s;
+	}
+
+	#hamburger-button-black:hover {
+		cursor: pointer;
+		transform: translateY(-5px);
+	}
+
+	#hamburger-button:hover {
+		color: red;
+		cursor: pointer;
+		transform: translateY(-5px);
+	}
+
+	#inner-hamburger-button-container {
 		display: flex;
-		align-items: center;
+		width: 100%;
 		justify-content: center;
+		margin-top: 2.5%;
 	}
 </style>
