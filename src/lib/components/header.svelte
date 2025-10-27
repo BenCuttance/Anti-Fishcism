@@ -1,24 +1,34 @@
 <script lang="ts">
 	import '../global.css';
-	import { Menu } from '@lucide/svelte';
-	import { Search } from '@lucide/svelte';
-	import { ShoppingCart } from '@lucide/svelte';
+	import { ShoppingCart, Menu, Search } from '@lucide/svelte';
 
 	let hamburgerMenuOpen = false;
 </script>
 
 <section>
-	<div id="hamburger-menu" style="display: {hamburgerMenuOpen ? 'none' : 'block'};">menu here</div>
 	<div id="hamburger-container">
 		<button
 			id="hamburger-button"
 			onclick={() => {
-				hamburgerMenuOpen = hamburgerMenuOpen ? false : true;
+				hamburgerMenuOpen = !hamburgerMenuOpen;
 				console.log(hamburgerMenuOpen);
 			}}
 		>
 			<Menu size={50} />
 		</button>
+		<div id="hamburger-menu" class:hamburger-open={hamburgerMenuOpen}>
+			<div id="inner-hamburger-button-container">
+				<button
+					id="hamburger-button-black"
+					onclick={() => {
+						hamburgerMenuOpen = !hamburgerMenuOpen;
+						console.log(hamburgerMenuOpen);
+					}}
+				>
+					<Menu size={50} />
+				</button>
+			</div>
+		</div>
 	</div>
 
 	<div id="logo-title">
@@ -33,7 +43,6 @@
 
 <style>
 	section {
-		position: relative;
 		width: 100%;
 		display: flex;
 		flex-direction: row;
@@ -44,13 +53,10 @@
 		font-family: var(--font-main);
 	}
 
-	div {
-		margin: 1.5%;
-	}
-
 	#nav-links {
 		display: flex;
 		gap: 20px;
+		margin: 1.5%;
 	}
 
 	a {
@@ -68,10 +74,24 @@
 	}
 
 	#hamburger-menu {
-		position: absolute;
-		background-color: red;
+		position: fixed;
+		top: 0;
+		left: 0;
 		height: 100vh;
 		width: 300px;
+		background-color: white;
+		transition:
+			transform 0.5s ease,
+			opacity 0.5s ease;
+		z-index: 999;
+		box-shadow: -5px 0 15px rgba(0, 0, 0, 1.6);
+	}
+
+	.hamburger-open {
+		transform: translateX(0);
+		opacity: 1;
+		transform: translateX(-100%);
+		opacity: 0;
 	}
 
 	#hamburger-button {
@@ -81,9 +101,28 @@
 		transition: 0.3s;
 	}
 
+	#hamburger-button-black {
+		background-color: transparent;
+		color: black;
+		border: none;
+		transition: 0.3s;
+	}
+
+	#hamburger-button-black:hover {
+		cursor: pointer;
+		transform: translateY(-5px);
+	}
+
 	#hamburger-button:hover {
 		color: red;
 		cursor: pointer;
 		transform: translateY(-5px);
+	}
+
+	#inner-hamburger-button-container {
+		display: flex;
+		width: 100%;
+		justify-content: center;
+		margin-top: 2.5%;
 	}
 </style>
