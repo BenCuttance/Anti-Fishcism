@@ -4,19 +4,21 @@
 	import { Search } from '@lucide/svelte';
 	import { ShoppingCart } from '@lucide/svelte';
 
-	let hamburgerMenuOpen = false
+	let hamburgerMenuOpen = false;
 </script>
 
 <section>
+	<div id="hamburger-menu" style="display: {hamburgerMenuOpen ? 'none' : 'block'};">menu here</div>
 	<div id="hamburger-container">
-		<button id="hamburger-menu"
-		onclick={() => {hamburgerMenuOpen = hamburgerMenuOpen ? false : true
-			 console.log(hamburgerMenuOpen)}}>
+		<button
+			id="hamburger-button"
+			onclick={() => {
+				hamburgerMenuOpen = hamburgerMenuOpen ? false : true;
+				console.log(hamburgerMenuOpen);
+			}}
+		>
 			<Menu size={50} />
 		</button>
-		<div style="display: {hamburgerMenuOpen ? "none" : "block"};">
-			menu here
-		</div>
 	</div>
 
 	<div id="logo-title">
@@ -31,6 +33,7 @@
 
 <style>
 	section {
+		position: relative;
 		width: 100%;
 		display: flex;
 		flex-direction: row;
@@ -50,7 +53,6 @@
 		gap: 20px;
 	}
 
-
 	a {
 		color: white;
 		transition: 0.3s;
@@ -61,17 +63,27 @@
 		transform: translateY(-5px);
 	}
 
-	#hamburger-menu{
+	#hamburger-container {
+		position: relative;
+	}
+
+	#hamburger-menu {
+		position: absolute;
+		background-color: red;
+		height: 100vh;
+		width: 300px;
+	}
+
+	#hamburger-button {
 		background-color: transparent;
 		color: white;
-		border: none;	
+		border: none;
 		transition: 0.3s;
 	}
 
-	#hamburger-menu:hover{
+	#hamburger-button:hover {
 		color: red;
 		cursor: pointer;
 		transform: translateY(-5px);
 	}
-
 </style>
