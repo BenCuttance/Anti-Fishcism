@@ -4,8 +4,6 @@
 	import { ShoppingCart, Menu, Search } from '@lucide/svelte';
 
 	let hamburgerMenuOpen = true;
-
-
 </script>
 
 <section>
@@ -91,10 +89,9 @@
 		color: black;
 		font-size: 40px;
 		padding: 2%;
-
 	}
 
-	.links-div a:hover{
+	.links-div a:hover {
 		transform: translateX(15px);
 	}
 

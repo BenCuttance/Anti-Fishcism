@@ -3,7 +3,6 @@
 	import { Facebook } from '@lucide/svelte';
 	import { Instagram } from '@lucide/svelte';
 	import { Twitter } from '@lucide/svelte';
-
 </script>
 
 <section>
