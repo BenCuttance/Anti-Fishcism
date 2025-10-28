@@ -1,8 +1,11 @@
 <script lang="ts">
+	import { links } from '$lib/config/links';
 	import '../global.css';
 	import { ShoppingCart, Menu, Search } from '@lucide/svelte';
 
-	let hamburgerMenuOpen = false;
+	let hamburgerMenuOpen = true;
+
+
 </script>
 
 <section>
@@ -27,6 +30,13 @@
 				>
 					<Menu size={50} />
 				</button>
+			</div>
+
+			<div class="links-div">
+				<a href={links.pageLinks.home}>Home</a>
+				<a href={links.pageLinks.catalog}>Catalog</a>
+				<a href={links.pageLinks.about}>About</a>
+				<a href={links.pageLinks.contactUs}>Contact Us</a>
 			</div>
 		</div>
 	</div>
@@ -69,6 +79,25 @@
 		transform: translateY(-5px);
 	}
 
+	.links-div {
+		display: flex;
+		flex-direction: column;
+		text-align: left;
+		align-items: flex-start;
+		margin: 2.5rem;
+	}
+
+	.links-div a {
+		color: black;
+		font-size: 40px;
+		padding: 2%;
+
+	}
+
+	.links-div a:hover{
+		transform: translateX(15px);
+	}
+
 	#hamburger-container {
 		position: relative;
 	}
@@ -78,7 +107,7 @@
 		top: 0;
 		left: 0;
 		height: 100vh;
-		width: 300px;
+		width: 450px;
 		background-color: white;
 		transition:
 			transform 0.5s ease,
@@ -110,7 +139,7 @@
 
 	#hamburger-button-black:hover {
 		cursor: pointer;
-		transform: translateY(-5px);
+		transform: translateX(15px);
 	}
 
 	#hamburger-button:hover {
@@ -120,9 +149,8 @@
 	}
 
 	#inner-hamburger-button-container {
-		display: flex;
-		width: 100%;
-		justify-content: center;
-		margin-top: 2.5%;
+		text-align: left;
+		align-items: flex-start;
+		margin: 2.5rem;
 	}
 </style>
