@@ -1,25 +1,9 @@
 <script lang="ts">
+	import { links } from '$lib/config/links';
 	import { Facebook } from '@lucide/svelte';
 	import { Instagram } from '@lucide/svelte';
 	import { Twitter } from '@lucide/svelte';
 
-	let facebookHovered = false;
-	let instagramHovered = false;
-	let twitterHovered = false;
-
-	let links = {
-		pageLinks: {
-			home: '/',
-			catalog: '/',
-			about: '/',
-			contactUs: '/'
-		},
-		socialMediaLinks: {
-			instagram: 'https://www.instagram.com/anti_fishcism/',
-			facebook: '/',
-			twitter: '/'
-		}
-	};
 </script>
 
 <section>
