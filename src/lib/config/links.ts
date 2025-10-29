@@ -2,7 +2,7 @@ export const links = {
 	pageLinks: {
 		home: '/',
 		catalog: '/',
-		about: '/',
+		about: '/about',
 		contactUs: '/'
 	},
 	socialMediaLinks: {
