@@ -9,13 +9,18 @@ if (PUBLIC_ABOUT_PAGE_HIDDEN === 'true') {
 </script>
 
 <section>
-	<h1>About page here</h1>
+	<div id="about-banner">
+		
+	</div>
 </section>
 
 <style>
-	h1 {
-		color: black;
-	}
+		#about-banner{
+			/* background-image: url('../../lib/images/bluewave.jpg'); */
+			background-size: cover;
+			width: 100%;
+			height: 500px;
+		}
 
     	section {
 		display: grid;
