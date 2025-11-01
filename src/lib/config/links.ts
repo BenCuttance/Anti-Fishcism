@@ -8,6 +8,7 @@ export const links = {
 	socialMediaLinks: {
 		instagram: 'https://www.instagram.com/anti_fishcism/',
 		facebook: '/',
-		twitter: '/'
+		twitter: '/',
+		merrianWebster: 'https://www.merriam-webster.com/dictionary/fascism',
 	}
 };
