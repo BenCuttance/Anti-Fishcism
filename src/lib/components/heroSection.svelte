@@ -72,11 +72,10 @@
 		align-items: center;
 		justify-content: center;
 
-        background-color: rgba(0, 0, 0, 0.87);
+		background-color: rgba(0, 0, 0, 0.87);
 		background-image: url('../images/fishBanner.png');
 		background-repeat: repeat-x;
 		background-size: 800px auto;
-
 	}
 
 	.slideshow-container {
@@ -93,11 +92,11 @@
 	}
 
 	.mySlides img {
-		min-width: 1000px;
-		max-width: 1000px;
-		min-height: 500px;
-		max-height: 500px;
+		width: 100%;
+		aspect-ratio: 2 / 1;
+		height: auto;
 		border-radius: 15px;
+		object-fit: cover;
 	}
 
 	.mySlides.fade {
@@ -139,5 +138,11 @@
 	}
 	.next {
 		right: 0;
+	}
+
+	@media (max-width: 400px) {
+		.mySlides {
+			min-width: 0px;
+		}
 	}
 </style>
