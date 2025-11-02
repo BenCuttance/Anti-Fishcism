@@ -5,9 +5,10 @@
 	import { ShoppingCart, Menu, Search } from '@lucide/svelte';
 
 	let hamburgerMenuOpen = false;
-	let width = 0;
+	let width;
+
 	let mobileDisplay;
-	let svgSize: number = 50;
+	let svgSize: number;
 
 	let menuContainer: HTMLElement;
 	let hamburgerButton: HTMLElement;
@@ -34,11 +35,16 @@
 			width = window.innerWidth;
 			mobileDisplay = width < 450;
 			svgSize = mobileDisplay ? 25 : 50;
-		};
+			console.log(width)
+		}
+
+		updateWidth()
+
 
 		window.addEventListener('resize', updateWidth);
 		document.addEventListener('click', handleClickOutside);
 	});
+
 </script>
 
 <section>
