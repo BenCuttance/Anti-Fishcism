@@ -4,56 +4,62 @@
 	import '../global.css';
 	import { ShoppingCart, Menu, Search } from '@lucide/svelte';
 
-	let hamburgerMenuOpen = true;
-	let width = 0
+	let hamburgerMenuOpen = false;
+	let width = 0;
 	let mobileDisplay;
-	let svgSize: number;
+	let svgSize: number = 50;
+
+	let menuContainer: HTMLElement;
+	let hamburgerButton: HTMLElement;
+
+	function toggleMenu() {
+		hamburgerMenuOpen = !hamburgerMenuOpen;
+		console.log(hamburgerMenuOpen);
+	}
+
+	function handleClickOutside(event: MouseEvent) {
+		if (
+			hamburgerMenuOpen &&
+			!menuContainer.contains(event.target as Node) &&
+			!hamburgerButton.contains(event.target as Node)
+		) {
+			hamburgerMenuOpen = false;
+		}
+	}
 
 	onMount(() => {
-		width = window.innerWidth
+		width = window.innerWidth;
 
 		const updateWidth = () => {
-			width = window.innerWidth
-			mobileDisplay = width < 450	
-			svgSize = mobileDisplay ? 25 : 50
+			width = window.innerWidth;
+			mobileDisplay = width < 450;
+			svgSize = mobileDisplay ? 25 : 50;
+		};
 
-		}
-
-		window.addEventListener("resize", updateWidth)
-	})
-
-
+		window.addEventListener('resize', updateWidth);
+		document.addEventListener('click', handleClickOutside);
+	});
 </script>
 
 <section>
 	<div id="hamburger-container">
-		<button
-			id="hamburger-button"
-			onclick={() => {
-				hamburgerMenuOpen = !hamburgerMenuOpen;
-				console.log(hamburgerMenuOpen);
-			}}
-		>
+		<button id="hamburger-button" bind:this={hamburgerButton} onclick={toggleMenu}>
 			<Menu size={svgSize} />
 		</button>
-		<div id="hamburger-menu" class:hamburger-open={hamburgerMenuOpen}>
+		<div id="hamburger-menu" bind:this={menuContainer} class:hamburger-open={!hamburgerMenuOpen}>
 			<div id="inner-hamburger-button-container">
-				<button
-					id="hamburger-button-black"
-					onclick={() => {
-						hamburgerMenuOpen = !hamburgerMenuOpen;
-						console.log(hamburgerMenuOpen);
-					}}
-				>
+				<button id="hamburger-button-black" onclick={toggleMenu}>
 					<Menu size={svgSize} />
 				</button>
 			</div>
 
 			<div class="links-div">
-				<a href={links.pageLinks.home}>Home</a>
-				<a href={links.pageLinks.catalog}>Catalog</a>
-				<a href={links.pageLinks.about}>About</a>
-				<a href={links.pageLinks.contactUs}>Contact Us</a>
+				<a href={links.pageLinks.home} onclick={() => (hamburgerMenuOpen = false)}>Home</a>
+				<a href={links.pageLinks.catalog} onclick={() => (hamburgerMenuOpen = false)}>Catalog</a>
+				<a href={links.pageLinks.about} onclick={() => (hamburgerMenuOpen = false)}>About</a>
+				<a href={links.pageLinks.contactUs} onclick={() => (hamburgerMenuOpen = false)}
+					>Contact Us</a
+				>
 			</div>
 		</div>
 	</div>
