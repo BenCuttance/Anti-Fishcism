@@ -120,13 +120,13 @@
 
 	.right-content {
 		width: 50%;
-		font-size: 22px;
+		font-size: 18px;
 		text-align: center;
 		margin-right: 1.5rem;
 	}
 
 	.right-content p {
-		padding: 1rem;
+		padding: 0.5rem;
 	}
 
 	.right-content p:nth-child(odd){
@@ -140,10 +140,10 @@
 
 	.about-cards {
 		font-family: var(--font-main);
-		box-shadow: 0 0 20px 6px rgba(0, 0, 0, 0.5);
+		box-shadow: 0 0 20px 6px rgba(0, 0, 0, 0.2);
 		background-color: black;
 		width: 50%;
-		height: 700px;
+		height: 600px;
 		margin: 2.5rem;
 		border-radius: 15px;
 		color: white;

@@ -33,7 +33,7 @@
 </section>
 
 <style>
-	* {
+	* { 
 		color: white;
 		font-family: var(--font-main);
 	}
@@ -95,6 +95,10 @@
 		#link-container{
 			text-align: unset;
 			align-items: normal;
+		}
+
+		#footer-image{
+			display: none;
 		}
 	}
 </style>

@@ -80,6 +80,7 @@
 
 	.slideshow-container {
 		max-width: 1000px;
+		/* min-width: 1000px; */
 		position: relative;
 		margin: auto;
 	}
@@ -140,9 +141,37 @@
 		right: 0;
 	}
 
+	/* @media (max-width: 1020px) {
+		.slideshow-container {
+			min-width: 800px;
+			max-width: 800px;
+		}
+	}
+
+	@media (max-width: 830px) {
+		.slideshow-container {
+			min-width: 500px;
+			max-width: 500px;
+		}
+	} */
+
 	@media (max-width: 400px) {
 		.mySlides {
 			min-width: 0px;
+		}
+
+		section {
+			height: unset;
+		}
+
+		.mySlides img {
+			border-radius: 0px;
+			margin: 0.5rem;
+			width: 95%;
+		}
+
+		.text {
+			font-size: unset;
 		}
 	}
 </style>
