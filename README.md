@@ -1,7 +1,18 @@
 TODO -
-- Click off of hamburger menu
-- Add about me, get image for banner
+
+- Click off of hamburger menu - (DONE)
+
+- Add about me page
+  - get image for banner (DONE)
+  - Add description (DONE)
+  - Fix description, betters colours???
+
 - CSS for smaller screens
-- implement stripe payments
-- implement cart
+  - Home (DONE)
+  - About (DONE)
+
+- Implement stripe payments
+
+- Implement cart
+
 - Fix and clear all TODOS

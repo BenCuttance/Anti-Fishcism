@@ -62,8 +62,7 @@
 
 <style>
 	#definition-text {
-		width: 1000px;
-		font-size: 25px;
+		font-size: clamp(15px, 1.5vw, 20px);
 	}
 
 	#about-banner {
@@ -89,7 +88,6 @@
 
 	p > a {
 		text-decoration: none;
-
 		font-size: 20px;
 	}
 
@@ -105,11 +103,15 @@
 		background-color: white;
 		padding: 2.5rem;
 		border-radius: 15px;
+		width: 50%;
 	}
 
 	.left-content {
 		width: 50%;
-		height: 100%;
+		display: flex;
+		align-items: flex-start;
+		justify-content: center;
+		align-items: center;
 	}
 
 	.left-content img {
@@ -119,17 +121,20 @@
 	}
 
 	.right-content {
+		padding: 0 2rem 2rem 2rem;
 		width: 50%;
-		font-size: 18px;
+		font-size: clamp(15px, 1.5vw, 18px);
 		text-align: center;
-		margin-right: 1.5rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
 	}
 
 	.right-content p {
-		padding: 0.5rem;
+		padding: 0.25rem;
 	}
 
-	.right-content p:nth-child(odd){
+	.right-content p:nth-child(odd) {
 		color: #daac75;
 	}
 
@@ -142,8 +147,7 @@
 		font-family: var(--font-main);
 		box-shadow: 0 0 20px 6px rgba(0, 0, 0, 0.2);
 		background-color: black;
-		width: 50%;
-		height: 600px;
+		width: 80%;
 		margin: 2.5rem;
 		border-radius: 15px;
 		color: white;
@@ -154,9 +158,50 @@
 	}
 
 	section {
-		min-height: 100vh;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+	}
+
+	@media (max-width: 760px) {
+		#typewriter-font {
+			padding: unset;
+			align-items: center;
+			width: 95%;
+		}
+
+		#definition-text {
+			font-size: 15px;
+			width: 85%;
+			text-align: justify;
+		}
+
+		#offical-definition {
+			text-align: center;
+			font-size: 12px;
+		}
+
+		p > a {
+			font-size: 12px;
+		}
+
+		.about-cards {
+			width: 95%;
+			height: unset;
+		}
+
+		.split-container {
+			flex-direction: column;
+			align-items: center;
+		}
+
+		.right-content {
+			width: 85%;
+			margin: unset;
+		}
+
+		.left-content {
+			width: 95%;
+		}
 	}
 </style>
