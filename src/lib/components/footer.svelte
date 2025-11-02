@@ -29,11 +29,11 @@
 			<Twitter size={50} />
 		</a>
 	</div>
-	<div>Brand Logo?</div>
+	<div id="footer-image">Brand Logo?</div>
 </section>
 
 <style>
-	* {
+	* { 
 		color: white;
 		font-family: var(--font-main);
 	}
@@ -83,5 +83,22 @@
 	a:hover {
 		color: red;
 		transform: translateX(5px);
+	}
+
+	@media(max-width: 650px){
+		section{
+			grid-template-columns: none;
+			grid-template-rows: repeat(3, 1fr);
+			gap: 2rem;
+		}
+
+		#link-container{
+			text-align: unset;
+			align-items: normal;
+		}
+
+		#footer-image{
+			display: none;
+		}
 	}
 </style>

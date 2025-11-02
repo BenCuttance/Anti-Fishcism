@@ -1,9 +1,28 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import { links } from '$lib/config/links';
 	import '../global.css';
 	import { ShoppingCart, Menu, Search } from '@lucide/svelte';
 
 	let hamburgerMenuOpen = true;
+	let width = 0
+	let mobileDisplay;
+	let svgSize: number;
+
+	onMount(() => {
+		width = window.innerWidth
+
+		const updateWidth = () => {
+			width = window.innerWidth
+			mobileDisplay = width < 450	
+			svgSize = mobileDisplay ? 25 : 50
+
+		}
+
+		window.addEventListener("resize", updateWidth)
+	})
+
+
 </script>
 
 <section>
@@ -15,7 +34,7 @@
 				console.log(hamburgerMenuOpen);
 			}}
 		>
-			<Menu size={50} />
+			<Menu size={svgSize} />
 		</button>
 		<div id="hamburger-menu" class:hamburger-open={hamburgerMenuOpen}>
 			<div id="inner-hamburger-button-container">
@@ -26,7 +45,7 @@
 						console.log(hamburgerMenuOpen);
 					}}
 				>
-					<Menu size={50} />
+					<Menu size={svgSize} />
 				</button>
 			</div>
 
@@ -44,8 +63,8 @@
 	</div>
 
 	<div id="nav-links">
-		<a href="/"><Search size={50} /></a>
-		<a href="/"><ShoppingCart size={50} /></a>
+		<a href="/"><Search size={svgSize} /></a>
+		<a href="/"><ShoppingCart size={svgSize} /></a>
 	</div>
 </section>
 

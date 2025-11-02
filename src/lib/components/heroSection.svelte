@@ -72,15 +72,15 @@
 		align-items: center;
 		justify-content: center;
 
-        background-color: rgba(0, 0, 0, 0.87);
+		background-color: rgba(0, 0, 0, 0.87);
 		background-image: url('../images/fishBanner.png');
 		background-repeat: repeat-x;
 		background-size: 800px auto;
-
 	}
 
 	.slideshow-container {
 		max-width: 1000px;
+		/* min-width: 1000px; */
 		position: relative;
 		margin: auto;
 	}
@@ -93,11 +93,11 @@
 	}
 
 	.mySlides img {
-		min-width: 1000px;
-		max-width: 1000px;
-		min-height: 500px;
-		max-height: 500px;
+		width: 100%;
+		aspect-ratio: 2 / 1;
+		height: auto;
 		border-radius: 15px;
+		object-fit: cover;
 	}
 
 	.mySlides.fade {
@@ -139,5 +139,39 @@
 	}
 	.next {
 		right: 0;
+	}
+
+	/* @media (max-width: 1020px) {
+		.slideshow-container {
+			min-width: 800px;
+			max-width: 800px;
+		}
+	}
+
+	@media (max-width: 830px) {
+		.slideshow-container {
+			min-width: 500px;
+			max-width: 500px;
+		}
+	} */
+
+	@media (max-width: 400px) {
+		.mySlides {
+			min-width: 0px;
+		}
+
+		section {
+			height: unset;
+		}
+
+		.mySlides img {
+			border-radius: 0px;
+			margin: 0.5rem;
+			width: 95%;
+		}
+
+		.text {
+			font-size: unset;
+		}
 	}
 </style>

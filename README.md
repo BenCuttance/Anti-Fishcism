@@ -4,3 +4,4 @@ TODO -
 - CSS for smaller screens
 - implement stripe payments
 - implement cart
+- Fix and clear all TODOS
