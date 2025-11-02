@@ -62,7 +62,7 @@
 
 <style>
 	#definition-text {
-		font-size: clamp(15px, 1.5vw, 20px );
+		font-size: clamp(15px, 1.5vw, 20px);
 	}
 
 	#about-banner {
@@ -123,7 +123,7 @@
 	.right-content {
 		padding: 0 2rem 2rem 2rem;
 		width: 50%;
-		font-size: clamp(15px, 1.5vw, 18px );
+		font-size: clamp(15px, 1.5vw, 18px);
 		text-align: center;
 		display: flex;
 		flex-direction: column;
@@ -134,7 +134,7 @@
 		padding: 0.25rem;
 	}
 
-	.right-content p:nth-child(odd){
+	.right-content p:nth-child(odd) {
 		color: #daac75;
 	}
 
@@ -163,21 +163,20 @@
 		align-items: center;
 	}
 
-	@media(max-width:760px){
-
-		#typewriter-font{
+	@media (max-width: 760px) {
+		#typewriter-font {
 			padding: unset;
 			align-items: center;
 			width: 95%;
 		}
 
-		#definition-text{
+		#definition-text {
 			font-size: 15px;
 			width: 85%;
 			text-align: justify;
 		}
 
-		#offical-definition{
+		#offical-definition {
 			text-align: center;
 			font-size: 12px;
 		}
@@ -186,22 +185,22 @@
 			font-size: 12px;
 		}
 
-		.about-cards{
+		.about-cards {
 			width: 95%;
 			height: unset;
 		}
 
-		.split-container{
+		.split-container {
 			flex-direction: column;
 			align-items: center;
 		}
 
-		.right-content{
+		.right-content {
 			width: 85%;
 			margin: unset;
 		}
 
-		.left-content{
+		.left-content {
 			width: 95%;
 		}
 	}

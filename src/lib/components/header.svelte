@@ -35,16 +35,14 @@
 			width = window.innerWidth;
 			mobileDisplay = width < 450;
 			svgSize = mobileDisplay ? 25 : 50;
-			console.log(width)
-		}
+			console.log(width);
+		};
 
-		updateWidth()
-
+		updateWidth();
 
 		window.addEventListener('resize', updateWidth);
 		document.addEventListener('click', handleClickOutside);
 	});
-
 </script>
 
 <section>
