@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
 	import { PUBLIC_ABOUT_PAGE_HIDDEN } from '$env/static/public';
+	import Divider from '$lib/components/divider.svelte';
 	import { links } from '$lib/config/links';
 	import fishFillerimage from '../../lib/images/poofy.jpg';
 
@@ -29,16 +30,18 @@
 			</p>
 		</div>
 	</div>
+	<Divider color="var(--main-light-black)" text=""/>
 
 	<div class="about-cards">
-		<h1>Story So Far</h1>
+		<!-- <h1>Story So Far</h1> -->
 
 		<div class="split-container">
 			<div class="left-content">
 				<!-- TODO: GET AN IMAGE - ADD ALT TEXT -->
 				<img src={fishFillerimage} alt="" />
 			</div>
-			<div class="right-content">
+			<div class="right-content"> 
+				<h1>Story So Far</h1>
 				<p>
 					Anti-Fishcism began as a creative outlet born from frustration with the state of the
 					world.
@@ -134,10 +137,6 @@
 		padding: 0.25rem;
 	}
 
-	.right-content p:nth-child(odd) {
-		color: #daac75;
-	}
-
 	.split-container {
 		display: flex;
 		height: 100%;
@@ -146,15 +145,16 @@
 	.about-cards {
 		font-family: var(--font-main);
 		box-shadow: 0 0 20px 6px rgba(0, 0, 0, 0.2);
-		background-color: black;
+		background-color: #F3F3F3;
 		width: 80%;
 		margin: 2.5rem;
 		border-radius: 15px;
-		color: white;
+		color: grey;
 	}
 
 	h1 {
 		text-align: center;
+		color: black;
 	}
 
 	section {
