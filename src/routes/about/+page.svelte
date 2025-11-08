@@ -33,7 +33,6 @@
 	<Divider color="var(--main-light-black)" text=""/>
 
 	<div class="about-cards">
-		<!-- <h1>Story So Far</h1> -->
 
 		<div class="split-container">
 			<div class="left-content">
