@@ -3,7 +3,7 @@ export const links = {
 		home: '/',
 		catalog: '/',
 		about: '/about',
-		contactUs: '/'
+		contactUs: '/contactUs'
 	},
 	socialMediaLinks: {
 		instagram: 'https://www.instagram.com/anti_fishcism/',
