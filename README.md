@@ -2,13 +2,14 @@ TODO -
 
 - Click off of hamburger menu - (DONE)
 
-- Add contact us page
+- Contact us page
   - Contact form 
 
-- Add about me page
+- About me page
   - get image for banner (DONE)
   - Add description (DONE)
   - Fix description, betters colours (DONE)
+  - Text width all the same?
 
 - CSS for smaller screens
   - Home (DONE)
