@@ -1,17 +1,18 @@
 <script lang="ts">
 </script>
 
+<!-- TODO: Email will need to be replaced with buisness email at later date -->
 <section>
 	<div id="form-container">
 		<form action="" method="post">
-			<label for="name">Name:</label><br />
-			<input type="text" id="name" name="name" placeholder="Name" /><br />
-			<label for="email">Email:</label><br />
-			<input type="text" id="email" name="email" placeholder="Email" /> <br />
-			<label for="subject">Subject:</label><br />
-			<input type="text" id="subject" name="subject" placeholder="Subject" /> <br />
-			<label for="message">Message:</label><br />
-			<textarea name="message" id="message" placeholder="Message"></textarea><br />
+			<label for="name">Name:</label>
+			<input type="text" id="name" name="name" placeholder="Name" />
+			<label for="email">Email:</label>
+			<input type="text" id="email" name="email" placeholder="Email" /> 
+			<label for="subject">Subject:</label>
+			<input type="text" id="subject" name="subject" placeholder="Subject" /> 
+			<label for="message">Message:</label>
+			<textarea name="message" id="message" placeholder="Message"></textarea>
 			<button id="submit-btn">Submit</button>
 		</form>
 	</div>
@@ -41,6 +42,7 @@
 		background-color: #000;
 		color: #fff;
 		padding: 0.5rem 1rem;
+		margin: 1.5rem 0;
 		border-radius: 12px;
 		width: auto;
 		min-width: 120px;
@@ -59,16 +61,21 @@
 		border: 1px solid black;
 		box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
 		transform: translateY(-2px);
+
 	}
 
 	input[type='text'],
 	textarea {
 		width: 100%;
 		padding: 12px;
-		margin: 1.5rem 0;
 		display: inline-block;
 		border: 1px solid #ccc;
 		border-radius: 4px;
 		box-sizing: border-box;
+	}
+
+	label{
+		display: block;
+		margin: 1.5rem 1.5rem 1px 1px;
 	}
 </style>

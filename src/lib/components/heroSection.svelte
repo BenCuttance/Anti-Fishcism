@@ -4,6 +4,7 @@
 	import design3 from '../images/poofy.jpg';
 	import { onMount } from 'svelte';
 
+	// TODO: replace images with actual product that will be the same size and format (hopefully...)
 	const slideShowImages = [
 		{ design: design1, caption: 'Design 1', link: '/' },
 		{ design: design2, caption: 'Design 2', link: '/' },

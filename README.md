@@ -3,7 +3,10 @@ TODO -
 - Click off of hamburger menu - (DONE)
 
 - Contact us page
-  - Contact form 
+  - Contact form (DONE)
+  - Connect test email (DONE)
+    - Get Brett to check security flaws? 
+    - Connect buisness email at later date
 
 - About me page
   - get image for banner (DONE)
@@ -20,3 +23,8 @@ TODO -
 - Implement cart
 
 - Fix and clear all TODOS
+
+
+## Dependencies 
+ > Svelte
+ > Nodemailer 
