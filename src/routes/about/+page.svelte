@@ -30,16 +30,15 @@
 			</p>
 		</div>
 	</div>
-	<Divider color="var(--main-light-black)" text=""/>
+	<Divider color="var(--main-light-black)" text="" />
 
 	<div class="about-cards">
-
 		<div class="split-container">
 			<div class="left-content">
 				<!-- TODO: GET AN IMAGE - ADD ALT TEXT -->
 				<img src={fishFillerimage} alt="" />
 			</div>
-			<div class="right-content"> 
+			<div class="right-content">
 				<h1>Story So Far</h1>
 				<p>
 					Anti-Fishcism began as a creative outlet born from frustration with the state of the
@@ -118,7 +117,6 @@
 
 	.left-content img {
 		width: 75%;
-		height: 75%;
 		margin-left: 1.5rem;
 	}
 
@@ -126,10 +124,17 @@
 		padding: 0 2rem 2rem 2rem;
 		width: 50%;
 		font-size: clamp(15px, 1.5vw, 18px);
-		text-align: center;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.right-content p {
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 55ch;
 	}
 
 	.right-content p {
@@ -144,8 +149,8 @@
 	.about-cards {
 		font-family: var(--font-main);
 		box-shadow: 0 0 20px 6px rgba(0, 0, 0, 0.2);
-		background-color: #F3F3F3;
-		width: 80%;
+		background-color: #f3f3f3;
+		width: 70%;
 		margin: 2.5rem;
 		border-radius: 15px;
 		color: grey;
