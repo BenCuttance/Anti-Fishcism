@@ -19,6 +19,9 @@ TODO -
   - About (DONE)
 
 - Implement stripe payments
+  - Implement first stripe iteration (DONE)
+  - Implement tests for current stripe logic - (If not for final implementation that atleast for practice!!!)
+  - Create componenets to house stripe products 
 
 - Implement cart
 
