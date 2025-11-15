@@ -2,6 +2,10 @@
 	import '../lib/global.css';
 	import HeroSection from '$lib/components/heroSection.svelte';
 	import Divider from '$lib/components/divider.svelte';
+
+	const products = {
+		testProduct1: 'price_1STgTu59TjmEpGUDRKYeUx9t'
+	};
 </script>
 
 <section>
@@ -9,7 +13,6 @@
 	<Divider color="var(--main-light-black)" text="" />
 
 	<div>Main Here</div>
-
 </section>
 
 <style>
