@@ -15,7 +15,6 @@
 
 	function toggleMenu() {
 		hamburgerMenuOpen = !hamburgerMenuOpen;
-		console.log(hamburgerMenuOpen);
 	}
 
 	function handleClickOutside(event: MouseEvent) {
@@ -35,7 +34,6 @@
 			width = window.innerWidth;
 			mobileDisplay = width < 450;
 			svgSize = mobileDisplay ? 25 : 50;
-			console.log(width);
 		};
 
 		updateWidth();
