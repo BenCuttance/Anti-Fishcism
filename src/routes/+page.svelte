@@ -3,6 +3,7 @@
 	import HeroSection from '$lib/components/heroSection.svelte';
 	import Divider from '$lib/components/divider.svelte';
 	import { stripeCheckout } from '$lib/stripe/checkout';
+	import TitleBanner from '$lib/components/titleBanner.svelte';
 
 	const products = {
 		herring: 'price_1STgTu59TjmEpGUDRKYeUx9t',
@@ -12,7 +13,7 @@
 </script>
 
 <section>
-	<HeroSection />
+	<!-- <HeroSection /> -->
 	<Divider color="var(--main-light-black)" text="" />
 
 	<div>
