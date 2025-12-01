@@ -9,7 +9,6 @@
 
 	let mobileDisplay;
 	let svgSize: number;
-
 	let menuContainer: HTMLElement;
 	let hamburgerButton: HTMLElement;
 
@@ -68,9 +67,8 @@
 		</div>
 	</div>
 
-	<div id="logo-title">
-		<h1>Anti-Fishcism image will go here</h1>
-	</div>
+	<!-- <div id="logo-title">
+	</div> -->
 
 	<div id="nav-links">
 		<a href="/"><Search size={svgSize} /></a>
@@ -85,7 +83,7 @@
 		flex-direction: row;
 		justify-content: space-between;
 		align-items: center;
-		background-color: var(--main-light-black);
+		background-color: var(--main-white);
 		color: white;
 		font-family: var(--font-main);
 	}
@@ -97,7 +95,7 @@
 	}
 
 	a {
-		color: white;
+		color: red;
 		transition: 0.3s;
 	}
 
