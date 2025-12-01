@@ -1,7 +1,13 @@
 
 :root {
   --font-main: "Funnel Sans", sans-serif;
-  --main-light-black: #0B0B0B
+  --main-light-black: #0B0B0B;
+  --main-white: #FFFFFF;
+  --main-light-blue: #36697C;
+  --main-dark-blue: #12303B;
+  --main-grey: #343432;
+  --main-black: #1B1A15;
+
 }
 
 html, body {
