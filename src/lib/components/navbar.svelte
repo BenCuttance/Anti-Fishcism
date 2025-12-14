@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { links } from '$lib/config/links';
 	import { ShoppingCart, Menu, Search } from '@lucide/svelte';
+	import { onMount } from 'svelte';
 
 	let hamburgerMenuOpen = false;
 	let svgSize: number = 50;
@@ -9,7 +10,6 @@
 
 	function toggleMenu() {
 		hamburgerMenuOpen = !hamburgerMenuOpen;
-		console.log(hamburgerMenuOpen);
 	}
 
 	function handleClickOutside(event: MouseEvent) {
@@ -21,6 +21,10 @@
 			hamburgerMenuOpen = false;
 		}
 	}
+
+	onMount(() => {
+		document.addEventListener('click', handleClickOutside)
+	})
 </script>
 
 <section>
@@ -50,12 +54,13 @@
 
 <style>
 	section {
-		background: #343432;
+		background: var(--main-grey);
 		font-family: arial;
 	}
 
 	.links {
 		display: flex;
+		align-items: center;
 		gap: 15px;
 		padding: 20px;
 	}
@@ -121,5 +126,6 @@
 
 	.links-div a:hover {
 		transform: translateX(15px);
+		text-decoration-color: var(--main-light-blue);
 	}
 </style>

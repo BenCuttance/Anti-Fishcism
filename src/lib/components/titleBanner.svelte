@@ -9,7 +9,7 @@
 
 <style>
 	section {
-		background: #343432;
+		background: var(--main-grey);
 		font-family: arial;
 	}
 	.loader {
