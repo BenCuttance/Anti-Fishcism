@@ -35,21 +35,25 @@
 	</div>
 
 	<div class="icons-div-container">
-		<div class="icons-div">
-			<Scale />
-			Sustainably made
+		<div>
+			<div class="icons-div">
+				<Scale size="50" />
+				Sustainably made
+			</div>
+			<div class="icons-div">
+				<Palette size="50" />
+				Art from local artists
+			</div>
 		</div>
-		<div class="icons-div">
-			<Palette />
-			Artwork from local artists
-		</div>
-		<div class="icons-div">
-			<Earth />
-			Independantly Owned
-		</div>
-		<div class="icons-div">
-			<Heart />
-			People Over Profit
+		<div>
+			<div class="icons-div">
+				<Earth size="50" />
+				Independantly Owned
+			</div>
+			<div class="icons-div">
+				<Heart size="50" />
+				People Over Profit
+			</div>
 		</div>
 	</div>
 
@@ -91,9 +95,28 @@
 <style>
 	.icons-div-container {
 		display: flex;
+		justify-content: center;
+		align-items: center;
 		width: 100%;
-		background-color: var(--main-dark-blue);
+		/* background-color: var(--main-dark-blue); */
+		background-color: rgba(29, 29, 155, 0.829);
+		height: auto;
+		color: white;
+	}
+
+	.icons-div {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 15px;
+		font-family: var(--font-main);
+		font-size: 25px;
+		width: 350px;
 		height: 100px;
+		margin: 25px;
+		padding: 15px;
+		background-color: black;
+		border-radius: 15px;
 	}
 
 	#about-title {
