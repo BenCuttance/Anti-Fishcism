@@ -1,10 +1,15 @@
-
 :root {
-  --font-main: "Funnel Sans", sans-serif;
-  --main-light-black: #0B0B0B
+	--font-main: 'Funnel Sans', sans-serif;
+	--main-white: #ffffff;
+	--main-light-blue: #5CACFF;
+	--main-dark-blue: #12303b;
+	--main-grey: #343432;
+	--main-black: #1b1a15;
+	--main-light-black: #0b0b0b;
 }
 
-html, body {
-  margin: 0;
-  padding: 0;
+html,
+body {
+	margin: 0;
+	padding: 0;
 }

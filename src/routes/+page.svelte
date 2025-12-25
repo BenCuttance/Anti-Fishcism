@@ -1,20 +1,16 @@
 <script lang="ts">
 	import '../lib/global.css';
-	import HeroSection from '$lib/components/heroSection.svelte';
-	import Divider from '$lib/components/divider.svelte';
 	import { stripeCheckout } from '$lib/stripe/checkout';
+	import TitleBanner from '$lib/components/titleBanner.svelte';
 
 	const products = {
 		herring: 'price_1STgTu59TjmEpGUDRKYeUx9t',
 		test2: 'price_1STiz859TjmEpGUDE0jmDndB'
 	};
-
 </script>
 
 <section>
-	<HeroSection />
-	<Divider color="var(--main-light-black)" text="" />
-
+	<TitleBanner />
 	<div>
 		<h3>Main Here</h3>
 
