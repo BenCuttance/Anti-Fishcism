@@ -35,7 +35,7 @@
 	</div>
 
 	<div class="icons-div-container">
-		<div>
+		<div class="icons-left">
 			<div class="icons-div">
 				<Scale size="50" />
 				Sustainably made
@@ -45,7 +45,7 @@
 				Art from local artists
 			</div>
 		</div>
-		<div>
+		<div class="icons-right">
 			<div class="icons-div">
 				<Earth size="50" />
 				Independantly Owned
@@ -98,9 +98,10 @@
 		justify-content: center;
 		align-items: center;
 		width: 100%;
-		/* background-color: var(--main-dark-blue); */
-		background-color: rgba(29, 29, 155, 0.829);
+		background-color: var(--main-dark-blue);
 		height: auto;
+		padding-top: 1.5%;
+		padding-bottom: 1.5%;
 		color: white;
 	}
 
@@ -116,6 +117,7 @@
 		margin: 25px;
 		padding: 15px;
 		background-color: black;
+		border: 2.5px solid white;
 		border-radius: 15px;
 	}
 
@@ -151,8 +153,6 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-
-		/* background-color: var(--main-grey); */
 	}
 
 	#typewriter-font h1,
@@ -240,6 +240,13 @@
 		align-items: center;
 	}
 
+	@media (max-width: 850px){
+		.icons-div-container{
+			flex-direction: column;
+		}
+
+	}
+
 	@media (max-width: 760px) {
 		#typewriter-font {
 			padding: unset;
@@ -272,12 +279,38 @@
 		}
 
 		.right-content {
-			width: 100%;
+			width: 95%;
 			margin: unset;
+			padding: unset;
 		}
 
 		.left-content {
 			width: 95%;
+		}
+
+		@media (max-width: 450px) {
+			.icons-left, .icons-right{
+				width: 100%;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+
+			.icons-div{
+				height: auto;
+				width: 90%;
+				margin: unset;
+				margin-top: 15px;
+				margin-bottom: 15px;
+				padding: 5px;
+			}
+
+			#about-banner{
+				height: auto;
+				margin-top: 10px;
+				margin-bottom: 10px;
+			}
+			
 		}
 	}
 </style>
